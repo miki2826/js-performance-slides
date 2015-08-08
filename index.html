@@ -110,15 +110,15 @@
 						<div class="sl-block-content fragment" style="z-index: 14; border-width: 1px;" data-highlight-theme="xcode" data-fragment-index="0">
                         <pre class="javascript">
                             <code>//String concatenation
-								var myConcatString = "this is a string" +
-								"and I am another string" +
-								"together we make a bigger string";
+var myConcatString = "this is a string" +
+"and I am another string" +
+"together we make a bigger string";
 
-								//Array join
-								var myConcatString = ["this is a string",
-								"and I am another string",
-								"together we make a bigger string"].join();
-							</code></pre>
+//Array join
+var myConcatString = ["this is a string",
+"and I am another string",
+"together we make a bigger string"].join();</code>
+						</pre>
 						</div>
 					</div>
 				</section>
@@ -185,15 +185,15 @@
 						<div class="sl-block-content fragment" style="z-index: 14; border-width: 1px;" data-highlight-theme="xcode" data-fragment-index="0">
                         <pre class="javascript">
                             <code>//Global / outside reference
-								var i;
-								for (i=0; i&lt;1000000; i++);
+var i;
+for (i=0; i&lt;1000000; i++);
 
-								//Local function variable
-								function countMeLocal() {
-								var i;
-								for (i=0; i&lt;1000000; i++);
-								}
-								countMeLocal(); </code></pre>
+//Local function variable
+function countMeLocal() {
+ var i;
+ for (i=0; i&lt;1000000; i++);
+}
+countMeLocal(); </code></pre>
 						</div>
 					</div>
 				</section>
@@ -262,21 +262,21 @@
 						<div class="sl-block-content fragment" style="z-index: 12; border-width: 1px;" data-highlight-theme="xcode" data-fragment-index="0">
                         <pre class="javascript">
                             <code>//Define on instantiation
-								function MyClass() {
-								// constructor body
-								this.myFunc = function() {
-								// do something
-								};
-								}
+function MyClass() {
+ // constructor body
+ this.myFunc = function() {
+  // do something
+ };
+}
 
-								//Define on the prototype
-								function MyClass() {
-								// constructor body
-								}
+//Define on the prototype
+function MyClass() {
+ // constructor body
+}
 
-								MyClass.prototype.myFunc = function() {
-								// do something
-								};
+MyClass.prototype.myFunc = function() {
+ // do something
+};
 							</code></pre>
 						</div>
 					</div>
@@ -388,23 +388,23 @@
 						<div class="sl-block-content fragment" style="z-index: 12; border-width: 1px;" data-highlight-theme="xcode" data-fragment-index="0">
                         <pre class="javascript">
                             <code>//Define on instantiation
-								function MyClass() {
-								// constructor body
-								this.myNumber = 4;
-								this.myBoolean = true;
-								this.myString = 'what?!?!?';
-								this.myArray = [];
-								}
+function MyClass() {
+ // constructor body
+ this.myNumber = 4;
+ this.myBoolean = true;
+ this.myString = 'what?!?!?';
+ this.myArray = [];
+}
 
-								//Define on the prototype
-								function MyClass() {
-								// constructor body
-								this.myArray = [];
-								}
+//Define on the prototype
+function MyClass() {
+ // constructor body
+ this.myArray = [];
+}
 
-								MyClass.prototype.myNumber = 4;
-								MyClass.prototype.myBoolean = true;
-								MyClass.prototype.myString = 'what?!?!?';</code></pre>
+MyClass.prototype.myNumber = 4;
+MyClass.prototype.myBoolean = true;
+MyClass.prototype.myString = 'what?!?!?';</code></pre>
 						</div>
 					</div>
 					<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 59px; height: 59px; left: 25px; top: 41px;">
@@ -435,31 +435,30 @@
 						<div class="sl-block-content fragment" style="z-index: 13; border-width: 1px;" data-highlight-theme="xcode" data-fragment-index="0">
                         <pre class="javascript">
                             <code>//Closure (referencing msg)
-								function tellTheWorld() {
-								var msg = 'I am Iron Man';
-								setTimeout(function() {
-								alert(msg);
-								}, 100);
-								}
+function tellTheWorld() {
+ var msg = 'I am Iron Man';
+ setTimeout(function() {
+  alert(msg);
+ }, 100);
+}
 
-								//Inner function - no closure
-								function tellTheWorld() {
-								setTimeout(function() {
-								var msg = 'I am Iron Man';
-								alert(msg);
-								}, 100);
-								}
+//Inner function - no closure
+function tellTheWorld() {
+ setTimeout(function() {
+  var msg = 'I am Iron Man';
+  alert(msg);
+ }, 100);
+}
 
+//Reuse a static function
+function theMessage() {
+ var msg = 'I am Iron Man';
+ alert(msg);
+}
 
-								//Reuse a static function
-								function theMessage() {
-								var msg = 'I am Iron Man';
-								alert(msg);
-								}
-
-								function tellTheWorld() {
-								setTimeout(theMessage, 100);
-								}</code></pre>
+function tellTheWorld() {
+ setTimeout(theMessage, 100);
+}</code></pre>
 						</div>
 					</div>
 				</section>
