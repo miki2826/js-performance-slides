@@ -528,6 +528,57 @@ function tellTheWorld() {
 					</div>
 				</section>
 				<section>
+					<div class="sl-block" data-block-type="text" style="width: 430px; left: 25px; top: 70px; height: auto;">
+						<div class="sl-block-content" style="text-align: left; z-index: 10;">
+							<h2>Closures</h2>
+						</div>
+					</div>
+					<div class="sl-block" data-block-type="text" style="width: 430px; left: 25px; top: 144px; height: auto;">
+						<div class="sl-block-content" style="z-index: 11; text-align: left;">
+							<p>Invoke a function with closure vs. An inner function with no closure vs. a static reference to a function.
+							</br>Without setTimeout</p>
+						</div>
+					</div>
+					<div class="sl-block" data-block-type="code" style="width: 600px; height: 538px; left: 480px; top: 78px;">
+						<div class="sl-block-content fragment" style="z-index: 13; border-width: 1px;" data-highlight-theme="xcode" data-fragment-index="0">
+                        <pre class="javascript">
+                            <code>function doSomeThing(func) {
+ func();
+}
+function theMessage() {
+ var msg = 'I am Iron Man';
+ console.log(msg);
+}
+function MyTestClass() {
+ //Closure (referencing msg)
+ function tellTheWorldWithClosure() {
+  var msg = 'I am Iron Man';
+  doSomeThing(function () {
+   console.log(msg);
+  });
+ }
+ //Inner function - no closure
+ function tellTheWorldWithInnerFunc() {
+  doSomeThing(function () {
+   var msg = 'I am Iron Man';
+   console.log(msg);
+  });
+ }
+ //Reuse a static function
+ function tellTheWorldStatically() {
+  doSomeThing(theMessage);
+ }
+ return {
+  tellTheWorldWithClosure: tellTheWorldWithClosure,
+  tellTheWorldWithInnerFunc: tellTheWorldWithInnerFunc,
+  tellTheWorldStatically: tellTheWorldStatically
+ }
+}
+var myFuncs = MyTestClass();</code></pre>
+						</div>
+					</div>
+				</section>
+				<section>
 					<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;">
 						<div class="sl-block-content" style="z-index: 10;">
 							<h1>Beware of</h1>
